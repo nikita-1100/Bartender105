@@ -22,14 +22,12 @@ import java.util.List;
 public class Cocktail extends BaseEntity{
     @Column(name = "cocktail_name", length = 100)
     private String cocktailName;
-
     @Column(length = 1200, name="recipe_text")
     private String recipeText;
     @Column(length = 1200, name = "story")
     private String story;
     @Column(name = "goods_prevalence")
     private Integer goodsPrevalence;
-
 //    @OneToMany(mappedBy = "cocktail_id")
 //    @OnDelete(action = OnDeleteAction.CASCADE)
 //    @BatchSize(size = 20000)
