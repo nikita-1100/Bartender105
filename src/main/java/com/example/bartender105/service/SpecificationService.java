@@ -1,6 +1,6 @@
 package com.example.bartender105.service;
 
-import com.example.bartender105.DTO.CalculationDTO;
+import com.example.bartender105.dto.CalculationDto;
 import com.example.bartender105.entity.Cocktail;
 import com.example.bartender105.entity.Specification;
 import com.example.bartender105.repository.CocktailRepository;
@@ -19,7 +19,7 @@ public class SpecificationService {
         return specificationRepository.findByCocktail(cocktail);
     }
 
-    public List<CalculationDTO> GetCalculation(Integer cocktailId, Integer servings) {
+    public List<CalculationDto> GetCalculation(Integer cocktailId, Integer servings) {
         return specificationRepository.getCalculation(cocktailId, servings);
     }
 }

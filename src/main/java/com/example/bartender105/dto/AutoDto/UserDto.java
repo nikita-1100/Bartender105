@@ -1,4 +1,4 @@
-package com.example.bartender105.DTO.AutoDto;
+package com.example.bartender105.dto.AutoDto;
 
 import com.example.bartender105.entity.authEntity.User;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

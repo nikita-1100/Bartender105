@@ -1,6 +1,6 @@
 package com.example.bartender105.repository;
 
-import com.example.bartender105.DTO.CalculationDTO;
+import com.example.bartender105.dto.CalculationDto;
 import com.example.bartender105.entity.Cocktail;
 import com.example.bartender105.entity.Specification;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -16,7 +16,7 @@ public interface SpecificationRepository extends JpaRepository<Specification,Int
     List<Specification> findByCocktail(Cocktail cocktail);
 
     @Query(nativeQuery = true)
-    List<CalculationDTO> getCalculation(Integer cocktailId, Integer servings);
+    List<CalculationDto> getCalculation(Integer cocktailId, Integer servings);
 
 
 }

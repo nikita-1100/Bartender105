@@ -1,14 +1,10 @@
 package com.example.bartender105.entity;
 
-import com.example.bartender105.DTO.CalculationDTO;
-import com.example.bartender105.DTO.GoodType;
+import com.example.bartender105.dto.CalculationDto;
+import com.example.bartender105.dto.GoodType;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.BatchSize;
-import org.hibernate.annotations.Fetch;
-
-import java.util.List;
 
 @Entity
 @Setter
@@ -18,7 +14,7 @@ import java.util.List;
         name = "specificationToCalculationMapping",
         classes = {
                 @ConstructorResult(
-                        targetClass = CalculationDTO.class,
+                        targetClass = CalculationDto.class,
                         columns = {
                                 @ColumnResult(name = "good_name", type = String.class),
                                 @ColumnResult(name = "good_type", type = GoodType.class),

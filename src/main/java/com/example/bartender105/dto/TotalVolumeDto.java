@@ -1,4 +1,4 @@
-package com.example.bartender105.DTO;
+package com.example.bartender105.dto;
 
 
 import lombok.AllArgsConstructor;
@@ -6,7 +6,7 @@ import lombok.Data;
 
 @AllArgsConstructor
 @Data
-public class TotalVolumeDTO {
+public class TotalVolumeDto {
     private Integer cocktailId;
     private Integer services;
     private Integer strength;

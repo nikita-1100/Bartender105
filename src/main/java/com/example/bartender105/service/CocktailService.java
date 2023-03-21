@@ -1,6 +1,6 @@
 package com.example.bartender105.service;
 
-import com.example.bartender105.DTO.TotalVolumeDTO;
+import com.example.bartender105.dto.TotalVolumeDto;
 import com.example.bartender105.entity.Cocktail;
 import com.example.bartender105.repository.CocktailRepository;
 import lombok.RequiredArgsConstructor;
@@ -36,8 +36,8 @@ public class CocktailService {
         return cocktailRepository.getSearchedCocktails(pageable,s);
     }
 
-    public TotalVolumeDTO getAltVolume(Integer cocktailId, Integer servings, Integer altStrength){
-        return new TotalVolumeDTO(cocktailId,servings,altStrength,
+    public TotalVolumeDto getAltVolume(Integer cocktailId, Integer servings, Integer altStrength){
+        return new TotalVolumeDto(cocktailId,servings,altStrength,
                 cocktailRepository.getAltVolume(cocktailId,servings,altStrength));
     }
 

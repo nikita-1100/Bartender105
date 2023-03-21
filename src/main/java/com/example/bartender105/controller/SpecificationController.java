@@ -1,6 +1,6 @@
 package com.example.bartender105.controller;
 
-import com.example.bartender105.DTO.CalculationDTO;
+import com.example.bartender105.dto.CalculationDto;
 import com.example.bartender105.entity.Specification;
 import com.example.bartender105.service.SpecificationService;
 import lombok.RequiredArgsConstructor;
@@ -19,7 +19,7 @@ public class SpecificationController {
     }
 
     @GetMapping("{cocktailId}/calculation")
-    public List<CalculationDTO> cocktailCalculation(@PathVariable Integer cocktailId,
+    public List<CalculationDto> cocktailCalculation(@PathVariable Integer cocktailId,
                                                     @RequestParam Integer servings){
         return specificationService.GetCalculation(cocktailId, servings);
     }

@@ -1,4 +1,4 @@
-package com.example.bartender105.DTO;
+package com.example.bartender105.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class CalculationDTO {
+public class CalculationDto {
     private String goodName;
     private GoodType goodType;
     private Integer amount;

@@ -1,7 +1,7 @@
 package com.example.bartender105.controller;
 
-import com.example.bartender105.DTO.AutoDto.AuthRequestDto;
-import com.example.bartender105.DTO.AutoDto.ResponseDto;
+import com.example.bartender105.dto.AutoDto.AuthRequestDto;
+import com.example.bartender105.dto.AutoDto.ResponseDto;
 import com.example.bartender105.entity.authEntity.User;
 import com.example.bartender105.security.jwt.JwtTokenProvider;
 import com.example.bartender105.service.UserService;
