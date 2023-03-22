@@ -13,14 +13,14 @@ import java.util.List;
 @RequestMapping("/spec")
 public class SpecificationController {
     private final SpecificationService specificationService;
-    @GetMapping("{cocktailId}")
-    public List<Specification> cocktailSpecification(@PathVariable Integer cocktailId){
-        return specificationService.GetCocktailSpec(cocktailId);
-    }
+//    @GetMapping("{cocktailId}")
+//    public List<Specification> cocktailSpecification(@PathVariable Integer cocktailId){
+//        return specificationService.GetCocktailSpec(cocktailId);
+//    }
 
-    @GetMapping("{cocktailId}/calculation")
-    public List<CalculationDto> cocktailCalculation(@PathVariable Integer cocktailId,
-                                                    @RequestParam Integer servings){
-        return specificationService.GetCalculation(cocktailId, servings);
-    }
+//    @GetMapping("{cocktailId}/calculation")
+//    public List<CalculationDto> cocktailCalculation(@PathVariable Integer cocktailId,
+//                                                    @RequestParam Integer servings){
+//        return specificationService.GetCalculation(cocktailId, servings);
+//    }
 }

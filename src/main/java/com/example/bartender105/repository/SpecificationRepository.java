@@ -12,11 +12,8 @@ import java.util.List;
 @Repository
 public interface SpecificationRepository extends JpaRepository<Specification,Integer> {
 
-
-    List<Specification> findByCocktail(Cocktail cocktail);
-
-    @Query(nativeQuery = true)
-    List<CalculationDto> getCalculation(Integer cocktailId, Integer servings);
+//    @Query(nativeQuery = true)
+//    List<CalculationDto> getCalculation(Integer cocktailId, Integer servings);
 
 
 }

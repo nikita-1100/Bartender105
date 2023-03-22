@@ -14,12 +14,12 @@ import java.util.List;
 public class SpecificationService {
     private final SpecificationRepository specificationRepository;
     private final CocktailRepository cocktailRepository;
-    public List<Specification> GetCocktailSpec(Integer cocktailId){
-        Cocktail cocktail = cocktailRepository.getById(cocktailId);
-        return specificationRepository.findByCocktail(cocktail);
-    }
+//    public List<Specification> GetCocktailSpec(Integer cocktailId){
+//        Cocktail cocktail = cocktailRepository.getById(cocktailId);
+//        return specificationRepository.findByCocktail(cocktail);
+//    }
 
-    public List<CalculationDto> GetCalculation(Integer cocktailId, Integer servings) {
-        return specificationRepository.getCalculation(cocktailId, servings);
-    }
+//    public List<CalculationDto> GetCalculation(Integer cocktailId, Integer servings) {
+//        return specificationRepository.getCalculation(cocktailId, servings);
+//    }
 }

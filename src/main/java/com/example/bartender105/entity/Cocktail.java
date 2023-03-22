@@ -18,6 +18,16 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "cocktail")
+@NamedEntityGraph(
+        name = "cocktail_entity-graph",
+        attributeNodes = @NamedAttributeNode(value = "specification", subgraph = "good-subgraph"),
+        subgraphs = {
+                @NamedSubgraph(
+                        name = "good-subgraph",
+                        attributeNodes = @NamedAttributeNode(value = "good")
+                )
+        }
+)
 @JsonIgnoreProperties({"pageable"})
 public class Cocktail extends BaseEntity{
     @Column(name = "cocktail_name", length = 100)
@@ -28,10 +38,11 @@ public class Cocktail extends BaseEntity{
     private String story;
     @Column(name = "goods_prevalence")
     private Integer goodsPrevalence;
-//    @OneToMany(mappedBy = "cocktail_id")
-//    @OnDelete(action = OnDeleteAction.CASCADE)
-//    @BatchSize(size = 20000)
-//    List<Specification> specification;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "cocktail_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    List<Specification> specification;
 
 
 }

@@ -42,4 +42,7 @@ public class CocktailService {
     }
 
 
+    public List<Cocktail> getAllUnpageable() {
+        return cocktailRepository.findAll();
+    }
 }

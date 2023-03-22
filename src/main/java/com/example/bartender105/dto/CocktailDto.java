@@ -2,9 +2,11 @@ package com.example.bartender105.dto;
 
 
 import com.example.bartender105.entity.Cocktail;
+import com.example.bartender105.entity.Specification;
 import lombok.Data;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Data
 public class CocktailDto {
@@ -22,8 +24,16 @@ public class CocktailDto {
         cocktailDto.setRecipeText(cocktail.getRecipeText());
         cocktailDto.setStory(cocktail.getStory());
         cocktailDto.setGoodsPrevalence(cocktail.getGoodsPrevalence());
-        //TODO: cocktailDto.setSpecifications;
+        cocktailDto.setSpecifications(fromSpec(cocktail.getSpecification()));
         return cocktailDto;
-
     };
+
+    private static List<SpecificationDto> fromSpec(List<Specification> spec){
+//        List<SpecificationDto> specDto = new ArrayList<>();
+//        for (Specification s: spec){
+//            specDto.add(SpecificationDto.fromSpecification(s));
+//        }
+//        return specDto;
+        return spec.stream().map(SpecificationDto::fromSpecification).collect(Collectors.toList());
+    }
 }

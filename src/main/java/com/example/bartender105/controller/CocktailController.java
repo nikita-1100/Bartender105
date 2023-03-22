@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/cocktails")
@@ -19,6 +21,11 @@ public class CocktailController {
             @RequestParam(value = "pageSize", required = false, defaultValue = "10") Integer pageSize
     ) {
         return cocktailService.getAllPageable(pageNumber, pageSize);
+    }
+
+    @GetMapping("/all")
+    public List<Cocktail> getAllCocktailsUnpageable() {
+        return cocktailService.getAllUnpageable();
     }
 
 

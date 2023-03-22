@@ -4,6 +4,7 @@ import com.example.bartender105.entity.Cocktail;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import org.springframework.data.jpa.repository.Query;
@@ -20,6 +21,14 @@ public interface CocktailRepository extends JpaRepository<Cocktail, Integer> {
             "WHERE good_name='Водка')";
 
     String fuzzySearchQuery = "SELECT * FROM cs(:param)";
+
+    @Override
+    @EntityGraph(attributePaths = {"specification.good"})
+    Page<Cocktail> findAll(Pageable pageable);
+
+    @Override
+    @EntityGraph(attributePaths = {"specification.good"})
+    List<Cocktail> findAll();
 
     @Query(value = cocktailsNativeQuery, nativeQuery = true)
     Page<Cocktail> getCocktailsWith(Pageable pageable);
